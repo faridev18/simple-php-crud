@@ -1,0 +1,337 @@
+:root{
+	  --color-1: #2f3240;
+	  --footer-bg: #1c2444;
+	  --color: #f2f3fb;
+	  --color-smooth: #9da2ae;
+	  --input-border: #3a456a;
+	  --btn-bg-color: #f1f2fc;
+	  --btn-hover-bg: #d5d9f6;
+	  --btn-color: #1e2641;
+	  --color-primary: #f4f4f4;
+	  --color-secondary: #495057;
+	  --color-green: #37af65;
+	  --bg-primary: #1b1b32;
+	  --bg-form: rgba(27, 27, 50, 0.8);
+}
+html{
+		 scroll-behavior: smooth;
+}
+body{
+	font-family: sans-serif;
+}
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.align-items-center{
+	align-items: center;
+}
+.justify-content-between{
+	justify-content: space-between;
+}
+/*header*/
+.header{
+	background-color: var(--color-1);
+	padding: 12px 0;
+	line-height: 1.5;
+}
+
+.header .logo,
+.header .nav{
+	padding:0 15px;
+}
+.header .logo a{
+	font-size: 30px;
+	color: #ffffff;
+	text-transform: capitalize;
+}
+.header .nav ul li{
+	display: inline-block;
+	margin-left: 40px;
+}
+.header .nav ul li a{
+	display: block;
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	padding: 10px 0;
+	transition: all 0.5s ease;
+}
+.header .nav ul li a.active,
+.header .nav ul li a:hover{
+	color: #f3a93d;
+}
+.nav-toggler{
+	height: 34px;
+	width: 44px;
+	background-color: #ffffff;
+	border-radius: 4px;
+	cursor: pointer;
+	border:none;
+	display: none;
+	margin-right: 15px;
+}
+.nav-toggler:focus{
+	outline: none;
+	box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+.nav-toggler span{
+    height: 2px;
+    width: 20px;
+    background-color: var(--color-1);
+    display: block;
+    margin:auto;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.nav-toggler.active span{
+	background-color: transparent;
+}
+.nav-toggler span::before,
+.nav-toggler span::after{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-1);
+	transition: all 0.3s ease;
+}
+.nav-toggler span::before{
+	transform: translateY(-6px);
+}
+.nav-toggler.active span::before{
+	transform: rotate(45deg);
+}
+.nav-toggler span::after{
+	transform: translateY(6px);
+}
+.nav-toggler.active span::after{
+	transform: rotate(135deg);
+}
+
+
+@media(max-width:991px){
+   .nav-toggler{
+   	display: block;
+   }
+   .header .nav{
+   	width: 100%;
+   	padding:0;
+   	max-height: 0px;
+   	overflow: hidden;
+   	visibility: hidden;
+   	transition: all 0.5s ease;
+   }
+   .header .nav.open{
+   	visibility: visible;
+   }
+   .header .nav ul{
+   	padding:12px 15px 0;
+   	margin-top: 12px;
+   	border-top:1px solid rgba(255,255,255,0.2);
+   }
+   .header .nav ul li{
+   	display: block;
+   	margin:0;
+   }
+}
+
+
+/* ===============
+Form Header
+=============== */
+.form-header {
+  max-width: 600px;
+  text-align: center;
+  padding: 0 0.5rem;
+  margin: 3rem auto;
+}
+
+.form-header > * {
+  margin: 0;
+}
+
+.form-header h1 {
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  font-size: 1.1rem;
+  font-weight: 200;
+  font-style: italic;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ===============
+Form
+=============== */
+form {
+  max-width: 600px;
+  margin: auto;
+  padding: 3rem 1rem;
+
+}
+
+form p {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+label {
+  display: block;
+  font-size: 1.1rem;
+}
+
+
+input,
+select,
+textarea {
+  width: 100%;
+ 
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  padding: 0.4rem 0.8rem;
+  margin: 0.5rem 0 2rem 0;
+  border-radius: 4px;
+
+}
+
+
+
+.btn-submit {
+  width: 100%;
+  color: #f4f4f4; /* fallback */
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #37af65; /* fallback */
+  background-color: var(--color-green);
+}
+
+
+/* Media queries */
+/* Screen resolution equal and bigger than 450px */
+@media screen and (min-width: 450px) {
+	form {
+		padding: 3rem;
+	}
+}
+
+/* Screen resolution equal and bigger than 600px */
+@media screen and (min-width: 600px) {
+	form {
+		border-radius: 6px 6px 0 0;
+	}
+}
+
+/* Screen resolution equal and bigger than 800px */
+@media screen and (min-width: 800px) {
+	.form-header,
+	form {
+		max-width: 750px;
+	}
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
